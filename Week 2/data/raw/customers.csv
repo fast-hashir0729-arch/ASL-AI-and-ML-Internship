@@ -1,0 +1,151 @@
+customer_id,customer_name,segment,city,join_date
+CUST-0001,Customer 1,Corporate,Islamabad,2019-01-01
+CUST-0002,Customer 2,Consumer,Faisalabad,2019-01-10
+CUST-0003,Customer 3,Home Office,Lahore,2019-01-19
+CUST-0004,Customer 4,Corporate,Peshawar,2019-01-28
+CUST-0005,Customer 5,Consumer,Multan,2019-02-06
+CUST-0006,Customer 6,Home Office,Lahore,2019-02-15
+CUST-0007,Customer 7,Corporate,Karachi,2019-02-24
+CUST-0008,Customer 8,Corporate,Multan,2019-03-05
+CUST-0009,Customer 9,Consumer,Karachi,2019-03-14
+CUST-0010,Customer 10,Consumer,Lahore,2019-03-23
+CUST-0011,Customer 11,Consumer,Multan,2019-04-01
+CUST-0012,Customer 12,Home Office,Faisalabad,2019-04-10
+CUST-0013,Customer 13,Corporate,Lahore,2019-04-19
+CUST-0014,Customer 14,Home Office,Karachi,2019-04-28
+CUST-0015,Customer 15,Consumer,Karachi,2019-05-07
+CUST-0016,Customer 16,Consumer,Multan,2019-05-16
+CUST-0017,Customer 17,Corporate,Faisalabad,2019-05-25
+CUST-0018,Customer 18,Consumer,Faisalabad,2019-06-03
+CUST-0019,Customer 19,Home Office,Peshawar,2019-06-12
+CUST-0020,Customer 20,Corporate,Faisalabad,2019-06-21
+CUST-0021,Customer 21,Corporate,Karachi,2019-06-30
+CUST-0022,Customer 22,Consumer,Lahore,2019-07-09
+CUST-0023,Customer 23,Home Office,Multan,2019-07-18
+CUST-0024,Customer 24,Home Office,Peshawar,2019-07-27
+CUST-0025,Customer 25,Corporate,Peshawar,2019-08-05
+CUST-0026,Customer 26,Consumer,Karachi,2019-08-14
+CUST-0027,Customer 27,Consumer,Karachi,2019-08-23
+CUST-0028,Customer 28,Consumer,Lahore,2019-09-01
+CUST-0029,Customer 29,Consumer,Lahore,2019-09-10
+CUST-0030,Customer 30,Corporate,Multan,2019-09-19
+CUST-0031,Customer 31,Corporate,Multan,2019-09-28
+CUST-0032,Customer 32,Home Office,Islamabad,2019-10-07
+CUST-0033,Customer 33,Consumer,Karachi,2019-10-16
+CUST-0034,Customer 34,Consumer,Faisalabad,2019-10-25
+CUST-0035,Customer 35,Consumer,Islamabad,2019-11-03
+CUST-0036,Customer 36,Consumer,Faisalabad,2019-11-12
+CUST-0037,Customer 37,Consumer,Peshawar,2019-11-21
+CUST-0038,Customer 38,Consumer,Karachi,2019-11-30
+CUST-0039,Customer 39,Consumer,Karachi,2019-12-09
+CUST-0040,Customer 40,Corporate,Peshawar,2019-12-18
+CUST-0041,Customer 41,Consumer,Multan,2019-12-27
+CUST-0042,Customer 42,Home Office,Karachi,2020-01-05
+CUST-0043,Customer 43,Corporate,Multan,2020-01-14
+CUST-0044,Customer 44,Consumer,Multan,2020-01-23
+CUST-0045,Customer 45,Home Office,Peshawar,2020-02-01
+CUST-0046,Customer 46,Home Office,Karachi,2020-02-10
+CUST-0047,Customer 47,Consumer,Peshawar,2020-02-19
+CUST-0048,Customer 48,Consumer,Peshawar,2020-02-28
+CUST-0049,Customer 49,Corporate,Karachi,2020-03-08
+CUST-0050,Customer 50,Consumer,Lahore,2020-03-17
+CUST-0051,Customer 51,Consumer,Multan,2020-03-26
+CUST-0052,Customer 52,Consumer,Lahore,2020-04-04
+CUST-0053,Customer 53,Corporate,Karachi,2020-04-13
+CUST-0054,Customer 54,Corporate,Islamabad,2020-04-22
+CUST-0055,Customer 55,Corporate,Peshawar,2020-05-01
+CUST-0056,Customer 56,Corporate,Peshawar,2020-05-10
+CUST-0057,Customer 57,Consumer,Lahore,2020-05-19
+CUST-0058,Customer 58,Corporate,Peshawar,2020-05-28
+CUST-0059,Customer 59,Consumer,Lahore,2020-06-06
+CUST-0060,Customer 60,Consumer,Faisalabad,2020-06-15
+CUST-0061,Customer 61,Corporate,Peshawar,2020-06-24
+CUST-0062,Customer 62,Consumer,Peshawar,2020-07-03
+CUST-0063,Customer 63,Corporate,Karachi,2020-07-12
+CUST-0064,Customer 64,Corporate,Peshawar,2020-07-21
+CUST-0065,Customer 65,Corporate,Lahore,2020-07-30
+CUST-0066,Customer 66,Corporate,Multan,2020-08-08
+CUST-0067,Customer 67,Corporate,Islamabad,2020-08-17
+CUST-0068,Customer 68,Consumer,Karachi,2020-08-26
+CUST-0069,Customer 69,Consumer,Lahore,2020-09-04
+CUST-0070,Customer 70,Consumer,Faisalabad,2020-09-13
+CUST-0071,Customer 71,Consumer,Islamabad,2020-09-22
+CUST-0072,Customer 72,Consumer,Multan,2020-10-01
+CUST-0073,Customer 73,Home Office,Islamabad,2020-10-10
+CUST-0074,Customer 74,Consumer,Islamabad,2020-10-19
+CUST-0075,Customer 75,Consumer,Peshawar,2020-10-28
+CUST-0076,Customer 76,Consumer,Lahore,2020-11-06
+CUST-0077,Customer 77,Consumer,Faisalabad,2020-11-15
+CUST-0078,Customer 78,Corporate,Faisalabad,2020-11-24
+CUST-0079,Customer 79,Corporate,Islamabad,2020-12-03
+CUST-0080,Customer 80,Corporate,Karachi,2020-12-12
+CUST-0081,Customer 81,Corporate,Lahore,2020-12-21
+CUST-0082,Customer 82,Consumer,Peshawar,2020-12-30
+CUST-0083,Customer 83,Home Office,Peshawar,2021-01-08
+CUST-0084,Customer 84,Consumer,Karachi,2021-01-17
+CUST-0085,Customer 85,Consumer,Lahore,2021-01-26
+CUST-0086,Customer 86,Consumer,Lahore,2021-02-04
+CUST-0087,Customer 87,Corporate,Lahore,2021-02-13
+CUST-0088,Customer 88,Consumer,Faisalabad,2021-02-22
+CUST-0089,Customer 89,Consumer,Peshawar,2021-03-03
+CUST-0090,Customer 90,Corporate,Lahore,2021-03-12
+CUST-0091,Customer 91,Consumer,Faisalabad,2021-03-21
+CUST-0092,Customer 92,Corporate,Karachi,2021-03-30
+CUST-0093,Customer 93,Consumer,Islamabad,2021-04-08
+CUST-0094,Customer 94,Consumer,Multan,2021-04-17
+CUST-0095,Customer 95,Consumer,Faisalabad,2021-04-26
+CUST-0096,Customer 96,Corporate,Peshawar,2021-05-05
+CUST-0097,Customer 97,Consumer,Lahore,2021-05-14
+CUST-0098,Customer 98,Consumer,Karachi,2021-05-23
+CUST-0099,Customer 99,Consumer,Karachi,2021-06-01
+CUST-0100,Customer 100,Home Office,Karachi,2021-06-10
+CUST-0101,Customer 101,Home Office,Peshawar,2021-06-19
+CUST-0102,Customer 102,Corporate,Faisalabad,2021-06-28
+CUST-0103,Customer 103,Consumer,Karachi,2021-07-07
+CUST-0104,Customer 104,Home Office,Peshawar,2021-07-16
+CUST-0105,Customer 105,Corporate,Islamabad,2021-07-25
+CUST-0106,Customer 106,Corporate,Multan,2021-08-03
+CUST-0107,Customer 107,Consumer,Islamabad,2021-08-12
+CUST-0108,Customer 108,Consumer,Lahore,2021-08-21
+CUST-0109,Customer 109,Consumer,Peshawar,2021-08-30
+CUST-0110,Customer 110,Home Office,Lahore,2021-09-08
+CUST-0111,Customer 111,Consumer,Karachi,2021-09-17
+CUST-0112,Customer 112,Consumer,Karachi,2021-09-26
+CUST-0113,Customer 113,Consumer,Karachi,2021-10-05
+CUST-0114,Customer 114,Corporate,Lahore,2021-10-14
+CUST-0115,Customer 115,Consumer,Lahore,2021-10-23
+CUST-0116,Customer 116,Home Office,Faisalabad,2021-11-01
+CUST-0117,Customer 117,Corporate,Peshawar,2021-11-10
+CUST-0118,Customer 118,Corporate,Lahore,2021-11-19
+CUST-0119,Customer 119,Consumer,Karachi,2021-11-28
+CUST-0120,Customer 120,Corporate,Multan,2021-12-07
+CUST-0121,Customer 121,Corporate,Peshawar,2021-12-16
+CUST-0122,Customer 122,Corporate,Faisalabad,2021-12-25
+CUST-0123,Customer 123,Consumer,Faisalabad,2022-01-03
+CUST-0124,Customer 124,Consumer,Multan,2022-01-12
+CUST-0125,Customer 125,Consumer,Islamabad,2022-01-21
+CUST-0126,Customer 126,Consumer,Karachi,2022-01-30
+CUST-0127,Customer 127,Consumer,Peshawar,2022-02-08
+CUST-0128,Customer 128,Consumer,Faisalabad,2022-02-17
+CUST-0129,Customer 129,Consumer,Lahore,2022-02-26
+CUST-0130,Customer 130,Corporate,Faisalabad,2022-03-07
+CUST-0131,Customer 131,Consumer,Lahore,2022-03-16
+CUST-0132,Customer 132,Home Office,Faisalabad,2022-03-25
+CUST-0133,Customer 133,Corporate,Faisalabad,2022-04-03
+CUST-0134,Customer 134,Consumer,Lahore,2022-04-12
+CUST-0135,Customer 135,Corporate,Islamabad,2022-04-21
+CUST-0136,Customer 136,Consumer,Lahore,2022-04-30
+CUST-0137,Customer 137,Home Office,Multan,2022-05-09
+CUST-0138,Customer 138,Consumer,Peshawar,2022-05-18
+CUST-0139,Customer 139,Corporate,Lahore,2022-05-27
+CUST-0140,Customer 140,Consumer,Islamabad,2022-06-05
+CUST-0141,Customer 141,Consumer,Peshawar,2022-06-14
+CUST-0142,Customer 142,Consumer,Karachi,2022-06-23
+CUST-0143,Customer 143,Home Office,Lahore,2022-07-02
+CUST-0144,Customer 144,Corporate,Islamabad,2022-07-11
+CUST-0145,Customer 145,Consumer,Multan,2022-07-20
+CUST-0146,Customer 146,Consumer,Multan,2022-07-29
+CUST-0147,Customer 147,Consumer,Karachi,2022-08-07
+CUST-0148,Customer 148,Corporate,Peshawar,2022-08-16
+CUST-0149,Customer 149,Consumer,Multan,2022-08-25
+CUST-0150,Customer 150,Consumer,Karachi,2022-09-03
