@@ -1,0 +1,27 @@
+MODEL EVALUATION REPORT
+========================================
+
+Logistic Regression (baseline)
+------------------------------
+Accuracy:  0.8101
+Precision: 0.7397
+Recall:    0.7826
+F1 score:  0.7606
+Confusion matrix (rows=actual, cols=predicted):
+[[91 19]
+ [15 54]]
+
+Random Forest (comparative, tuned)
+----------------------------------
+Accuracy:  0.7933
+Precision: 0.7424
+Recall:    0.7101
+F1 score:  0.7259
+Confusion matrix (rows=actual, cols=predicted):
+[[93 17]
+ [20 49]]
+
+COMPARISON TABLE
+                             model  accuracy  precision  recall     f1
+    Logistic Regression (baseline)    0.8101     0.7397  0.7826 0.7606
+Random Forest (comparative, tuned)    0.7933     0.7424  0.7101 0.7259

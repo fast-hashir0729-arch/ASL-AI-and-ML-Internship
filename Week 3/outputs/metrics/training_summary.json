@@ -1,0 +1,16 @@
+{
+  "baseline": {
+    "name": "Logistic Regression (baseline)",
+    "cv_f1_mean": 0.728,
+    "cv_f1_std": 0.0252
+  },
+  "comparative": {
+    "name": "Random Forest (comparative, tuned)",
+    "cv_f1_mean": 0.7559,
+    "best_params": {
+      "model__max_depth": 8,
+      "model__min_samples_leaf": 1,
+      "model__n_estimators": 100
+    }
+  }
+}

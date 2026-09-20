@@ -7,9 +7,9 @@ passenger survival. The project follows a leakage-free workflow: load data,
 check its quality, split into train/test, preprocess, train and compare two
 models, evaluate them, and document the results.
 
-**Status: Phase 1 complete** (data loading, quality check, train/test split,
-preprocessing pipeline). Model training, evaluation, and reporting are
-Phase 2.
+**Status: Complete** (Phase 1: data loading, quality check, train/test
+split, preprocessing pipeline. Phase 2: model training, tuning,
+evaluation, and reporting).
 
 ## Dataset
 
@@ -35,13 +35,28 @@ asl-internship-aiml-week3-hashir/
 ├── src/
 │   ├── data_loader.py          # loads + validates the raw dataset
 │   ├── data_quality.py         # missing values, duplicates, class balance
-│   └── preprocessing.py        # feature selection, split, ColumnTransformer
-├── models/                     # saved fitted model (Phase 2)
+│   ├── preprocessing.py        # feature selection, split, ColumnTransformer
+│   ├── model_pipeline.py       # combines preprocessor + model into one Pipeline
+│   ├── train_model.py          # trains baseline + tuned comparative model
+│   └── evaluate.py             # test-set metrics, plots, model comparison
+├── models/
+│   ├── baseline_logistic_regression.joblib
+│   ├── comparative_random_forest.joblib
+│   └── final_model.joblib      # best model by test-set F1
 ├── outputs/
-│   ├── figures/                # charts (Phase 2)
+│   ├── figures/
+│   │   ├── logistic_confusion_matrix.png
+│   │   ├── random_confusion_matrix.png
+│   │   ├── model_comparison.png
+│   │   └── feature_importance.png
 │   └── metrics/
-│       └── data_quality_report.txt
-├── reports/                    # short PDF/DOCX report (Phase 2)
+│       ├── data_quality_report.txt
+│       ├── training_summary.json
+│       ├── evaluation_report.txt
+│       └── model_comparison.csv
+├── reports/
+│   ├── conclusion.md
+│   └── Week3_Report.docx
 ├── requirements.txt
 ├── .gitignore
 └── README.md
@@ -55,7 +70,7 @@ source venv/bin/activate        # Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-## How to Run (Phase 1)
+## How to Run
 
 Run each step from the project root, in order:
 
@@ -63,6 +78,8 @@ Run each step from the project root, in order:
 python -m src.data_loader        # sanity-check the raw dataset loads
 python -m src.data_quality       # writes outputs/metrics/data_quality_report.txt
 python -m src.preprocessing      # splits data, verifies the pipeline, saves splits
+python -m src.train_model        # trains baseline + tuned comparative model
+python -m src.evaluate           # test-set metrics, plots, picks the final model
 ```
 
 ## Data Quality Notes (documented decisions)
@@ -87,7 +104,29 @@ python -m src.preprocessing      # splits data, verifies the pipeline, saves spl
 - **Numeric:** `age`, `fare`, `sibsp`, `parch`
 - **Categorical:** `pclass`, `sex`, `embarked`
 
-## Implemented So Far (Phase 1)
+## Models & Results
+
+| Model | Accuracy | Precision | Recall | F1 |
+|---|---|---|---|---|
+| Logistic Regression (baseline) | 0.810 | 0.740 | 0.783 | **0.761** |
+| Random Forest (tuned, comparative) | 0.793 | 0.742 | 0.710 | 0.726 |
+
+**Chosen model: Logistic Regression (baseline)** — it had the higher
+test-set F1 and generalized more consistently from cross-validation to the
+test set than the tuned Random Forest. Full reasoning is in
+`reports/conclusion.md`.
+
+- 5-fold cross-validation (baseline): F1 = 0.728 (± 0.025)
+- GridSearchCV best params (Random Forest): `n_estimators=100`,
+  `max_depth=8`, `min_samples_leaf=1`
+- Both models use `class_weight="balanced"` to address the mild (62/38)
+  class imbalance found during the data-quality check
+
+See `outputs/figures/` for confusion matrices, the model comparison chart,
+and the Random Forest feature-importance plot, and
+`outputs/metrics/evaluation_report.txt` for the full numeric report.
+
+## Implemented Features
 
 - [x] Raw data loading with validation
 - [x] Data-quality check (shape, dtypes, missing values, duplicates, class
@@ -97,24 +136,29 @@ python -m src.preprocessing      # splits data, verifies the pipeline, saves spl
       any preprocessing is fit
 - [x] Preprocessing pipeline: median/most-frequent imputation → scaling /
       one-hot encoding, via `ColumnTransformer`
-- [x] Verified the pipeline fits on train only and transforms both splits
-      without error
-
-## Coming in Phase 2
-
-- [ ] Baseline model (Logistic Regression) + comparative model (Random
+- [x] Baseline model (Logistic Regression) + comparative model (Random
       Forest), each wrapped in a full `Pipeline` with the preprocessor
-- [ ] Evaluation: accuracy, precision, recall, F1, confusion matrix
-- [ ] Model comparison table and final choice
-- [ ] Bonus: cross-validation, hyperparameter search, feature importance
-- [ ] Save the final fitted model with `joblib`
-- [ ] Written conclusion (200–350 words)
-- [ ] Short PDF/DOCX report
+- [x] Evaluation: accuracy, precision, recall, F1, confusion matrix
+- [x] Model comparison table and final choice
+- [x] Save the final fitted model with `joblib`
+- [x] Written conclusion (200–350 words)
+- [x] Short DOCX report
+
+## Bonus Features Implemented
+
+- [x] Cross-validation (5-fold, on the baseline model)
+- [x] Hyperparameter search (`GridSearchCV` on the Random Forest)
+- [x] Feature importance visualization (Random Forest)
+- [x] Class imbalance handling (`class_weight="balanced"` on both models)
 
 ## Known Limitations
 
 - The dataset is small (891 rows) relative to many production ML datasets,
-  which limits how confidently results generalize.
+  and the two models' test-set F1 scores are close enough (0.761 vs. 0.726)
+  that the ranking could shift with a different random split.
 - `age` imputation uses a simple median strategy rather than a
   group-based estimate (e.g., median age per passenger class), which is
   a reasonable simplification for a baseline project.
+- No GUI, so the "screenshots" requested in the submission guide are the
+  generated evaluation plots in `outputs/figures/`, which serve as visual
+  evidence the pipeline runs end-to-end.
