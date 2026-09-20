@@ -1,0 +1,33 @@
+DATA QUALITY REPORT
+========================================
+Shape: 891 rows, 15 columns
+
+Column dtypes:
+  - survived: int64
+  - pclass: int64
+  - sex: str
+  - age: float64
+  - sibsp: int64
+  - parch: int64
+  - fare: float64
+  - embarked: str
+  - class: str
+  - who: str
+  - adult_male: bool
+  - deck: str
+  - embark_town: str
+  - alive: str
+  - alone: bool
+
+Missing values (columns with at least one missing value):
+  - deck: 688 missing (77.2%)
+  - age: 177 missing (19.9%)
+  - embarked: 2 missing (0.2%)
+  - embark_town: 2 missing (0.2%)
+
+Duplicate rows: 107
+
+Target column: 'survived'
+Target class balance:
+  - 0: 549 (61.6%)
+  - 1: 342 (38.4%)
