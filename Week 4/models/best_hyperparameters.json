@@ -1,0 +1,42 @@
+{
+  "selected_model": "gradient_boosting_tuned",
+  "selection_basis": "cross-validated mean F1 (StratifiedKFold, k=5)",
+  "cv_f1": 0.7692,
+  "hyperparameters": {
+    "learning_rate": 0.08022638210045349,
+    "max_depth": 3,
+    "min_samples_leaf": 5,
+    "n_estimators": 197,
+    "subsample": 0.8900589132282684
+  },
+  "test_set_metrics": {
+    "test_accuracy": 0.8156,
+    "test_precision": 0.8103,
+    "test_recall": 0.6812,
+    "test_f1": 0.7402
+  },
+  "top_features": {
+    "categorical__sex_female": 0.2478,
+    "numeric__fare": 0.2196,
+    "numeric__age": 0.1648,
+    "categorical__sex_male": 0.1595,
+    "categorical__pclass_3": 0.1051,
+    "categorical__pclass_1": 0.0332,
+    "categorical__embarked_S": 0.0245,
+    "numeric__sibsp": 0.0197,
+    "numeric__parch": 0.011,
+    "categorical__embarked_C": 0.0055,
+    "categorical__pclass_2": 0.0039,
+    "categorical__alone_False": 0.0024
+  },
+  "permutation_importance": {
+    "sex": 0.2908,
+    "pclass": 0.1552,
+    "fare": 0.0746,
+    "age": 0.069,
+    "embarked": 0.0152,
+    "sibsp": 0.0103,
+    "parch": -0.0043,
+    "alone": -0.0059
+  }
+}

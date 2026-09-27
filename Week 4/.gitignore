@@ -1,0 +1,21 @@
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS / editor
+.DS_Store
+.vscode/
+*.swp
+
+# Large/generated artifacts kept out of version control if regenerated locally
+# (final_tuned_model.joblib and figures ARE committed for this submission
+# so the repo is reviewable without re-running the pipeline)

@@ -1,0 +1,38 @@
+{
+  "logistic_regression": {
+    "accuracy": {
+      "mean": 0.7924,
+      "std": 0.0127
+    },
+    "precision": {
+      "mean": 0.7138,
+      "std": 0.0211
+    },
+    "recall": {
+      "mean": 0.7688,
+      "std": 0.0409
+    },
+    "f1": {
+      "mean": 0.7394,
+      "std": 0.0189
+    }
+  },
+  "random_forest": {
+    "accuracy": {
+      "mean": 0.8159,
+      "std": 0.0241
+    },
+    "precision": {
+      "mean": 0.7736,
+      "std": 0.055
+    },
+    "recall": {
+      "mean": 0.7427,
+      "std": 0.0172
+    },
+    "f1": {
+      "mean": 0.7566,
+      "std": 0.025
+    }
+  }
+}
