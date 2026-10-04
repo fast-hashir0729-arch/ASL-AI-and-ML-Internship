@@ -1,0 +1,15 @@
+# Virtual environments
+.venv/
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Logs (keep the folder, ignore the files)
+logs/*.log
+
+# Secrets and OS files
+.env
+.DS_Store

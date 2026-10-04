@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Titanic Survival Predictor</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f2f5f9; margin: 0; padding: 24px; color: #1f2933; }
+    .card { max-width: 480px; margin: 0 auto; background: white; padding: 24px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    h1 { font-size: 22px; margin-top: 0; }
+    label { display: block; margin-top: 12px; font-size: 14px; font-weight: bold; }
+    input, select { width: 100%; padding: 8px; margin-top: 4px; box-sizing: border-box; border: 1px solid #c4ccd6; border-radius: 6px; }
+    button { width: 100%; margin-top: 20px; padding: 10px; background: #1b6ec2; color: white; border: none; border-radius: 6px; font-size: 16px; cursor: pointer; }
+    button:hover { background: #155a9f; }
+    #result { margin-top: 20px; padding: 14px; border-radius: 6px; display: none; }
+    .good { background: #e3f6e8; border: 1px solid #5cb97a; }
+    .bad { background: #fdeaea; border: 1px solid #d9534f; }
+    pre { white-space: pre-wrap; font-size: 13px; margin: 8px 0 0 0; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Titanic Survival Predictor</h1>
+
+    <label>Ticket class
+      <select id="pclass"><option>1</option><option>2</option><option selected>3</option></select>
+    </label>
+    <label>Sex
+      <select id="sex"><option value="male">male</option><option value="female">female</option></select>
+    </label>
+    <label>Age <input id="age" type="number" value="30" min="0" max="100" step="any"></label>
+    <label>Siblings / spouses aboard <input id="sibsp" type="number" value="0" min="0" max="10"></label>
+    <label>Parents / children aboard <input id="parch" type="number" value="0" min="0" max="10"></label>
+    <label>Fare <input id="fare" type="number" value="8.05" min="0" max="600" step="any"></label>
+    <label>Port of embarkation
+      <select id="embarked"><option value="S">Southampton (S)</option><option value="C">Cherbourg (C)</option><option value="Q">Queenstown (Q)</option></select>
+    </label>
+    <label>API key (only if the server needs one) <input id="api_key" type="password"></label>
+
+    <button onclick="predict()">Predict</button>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    // Read the form and turn the values into real numbers (the API rejects text numbers)
+    function readForm() {
+      return {
+        pclass: Number(document.getElementById("pclass").value),
+        sex: document.getElementById("sex").value,
+        age: Number(document.getElementById("age").value),
+        sibsp: Number(document.getElementById("sibsp").value),
+        parch: Number(document.getElementById("parch").value),
+        fare: Number(document.getElementById("fare").value),
+        embarked: document.getElementById("embarked").value,
+      };
+    }
+
+    function showResult(text, isGood) {
+      const box = document.getElementById("result");
+      box.style.display = "block";
+      box.className = isGood ? "good" : "bad";
+      box.innerHTML = text;
+    }
+
+    async function predict() {
+      const headers = { "Content-Type": "application/json" };
+      const apiKey = document.getElementById("api_key").value;
+      if (apiKey) { headers["X-API-Key"] = apiKey; }
+
+      try {
+        const response = await fetch("/predict", {
+          method: "POST",
+          headers: headers,
+          body: JSON.stringify(readForm()),
+        });
+        const data = await response.json();
+
+        if (response.ok) {
+          const percent = (data.probability_survived * 100).toFixed(1);
+          showResult(
+            "<strong>Prediction: " + data.label + "</strong><br>" +
+            "Chance of survival: " + percent + "%<br>" +
+            "Model: " + data.model_name + " " + data.model_version, true);
+        } else {
+          showResult("<strong>Error: " + data.error + "</strong><pre>" +
+            JSON.stringify(data.details || data.message, null, 2) + "</pre>", false);
+        }
+      } catch (error) {
+        showResult("Could not reach the API. Is the server running?", false);
+      }
+    }
+  </script>
+</body>
+</html>
